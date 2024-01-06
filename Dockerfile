@@ -18,7 +18,7 @@ RUN mvn package
 FROM tomcat:9.0-jdk11-openjdk-slim
 
 # Copy the built WAR file from the builder stage to Tomcat's webapps directory
-COPY --from=builder /usr/src/app/target/your-web-app.war /usr/local/tomcat/webapps/
+COPY --from=builder /usr/src/app/target/web.war /usr/local/tomcat/webapps/
 
 # Expose the default Tomcat port
 EXPOSE 8080
